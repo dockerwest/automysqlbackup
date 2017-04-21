@@ -6,4 +6,5 @@ COPY ./root /
 VOLUME /backup
 WORKDIR /backup
 
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["automysqlbackup"]
