@@ -1,10 +1,10 @@
-FROM alpine
+FROM blackikeeagle/alpine:3.5
 
-RUN apk add --no-cache bash mysql-client
+RUN apk add --update --no-cache bash mysql-client
 COPY ./root /
 
 VOLUME /backup
 WORKDIR /backup
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/command.sh"]
 CMD ["automysqlbackup"]
